@@ -1,0 +1,14 @@
+.slide {
+    position: relative;
+    display: inline-block;
+}
+ 
+.slide img {
+    vertical-align: top;
+}
+ 
+.slide img.next {
+    position: absolute;
+    top: 0;
+    left: 0;
+}

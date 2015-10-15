@@ -1,0 +1,82 @@
+<!DOCTYPE html >
+
+	<head>
+		<title>Komfort-Slideshow</title>
+
+		<script type="text/javascript" src="slideshow-framework/slideshow-framework.js">  </script>
+		<script type="text/javascript">
+			// create first slide
+			SlideFramework.init({
+				id: "slide",
+				images: [
+					"images/1.jpg",
+					"images/2.jpg",
+					"images/3.jpg"
+					
+				],
+				viewTime: 1000,
+				sliStep: 0.2,
+				random: false,
+				autostart: false
+			});
+
+		
+
+		</script>
+		<style type="text/css">
+			body {
+				font-family: sans-serif;
+			}
+			dl {
+				font-family: sans-serif;
+				font-size: 80%;
+			}
+			dt {
+				margin-top: 1em;
+				font-weight: bold;
+			}
+		</style>
+	</head>
+	<body>
+
+		<h1>Komfort-Slideshow</h1>
+		<p>Slide: <img src="images/1.jpg" alt="" id="slide" /></p>
+
+		<h2>Try the following methods:</h2>
+		<dl>
+			<dt>Start/Stop</dt>
+			<dd><a href="#" onclick="SlideFramework.slides.slide.start()">start()</a> - <a href="#" onclick="SlideFramework.slides.slide.stop()">stop()</a></dd>
+			<dt>next slide at ongoing slideshow (forward and backwards)</dt>
+			<dd><a href="#" onclick="SlideFramework.slides.slide.next()">next()</a></dd>
+			<dd><a href="#" onclick="SlideFramework.slides.slide.next(false, '')">next(false, "")</a> (forward)</dd>
+			<dd><a href="#" onclick="SlideFramework.slides.slide.next(false, 'backwards')">next(false, "backwards")</a> (backwards)</dd>
+			<dt>One-step control for ongoing slideshow</dt>
+			<dd><a href="#" onclick="SlideFramework.slides.slide.next(true)">next(true)</a></dd>
+			<dd><a href="#" onclick="SlideFramework.slides.slide.next(true, '')">next(true, "")</a> (forward)</dd>
+			<dd><a href="#" onclick="SlideFramework.slides.slide.next(true, 'backwards')">next(true, "backwards")</a> (backwards)</dd>
+			<dt>Displaycontrol</dt>
+			<dd>random = <a href="#" onclick="SlideFramework.slides.slide.random = true; SlideFramework.slides.slide.createPlayList();">true</a> / <a href="#" onclick="SlideFramework.slides.slide.random = false; 
+			SlideFramework.slides.slide.createPlayList();">false</a></dd>
+			<dd>sliStep = <select id="sliStep">
+				<option value="0.2">0.2</option>
+				<option value="0.5">0.5</option>
+				<option value="1">1</option>
+				<option value="1.25">1.25</option>
+				<option value="2">2</option>
+				<option value="5">5</option>
+				<option value="10">10</option>
+				</select> <a href="#" onclick="SlideFramework.slides.slide.sliStep = (document.getElementById('sliStep')[document.getElementById('sliStep').selectedIndex].value/1)">set</a></dd>
+			<dd>viewtime = <select id="viewTime">
+				<option value="1000">1000</option>
+				<option value="3000">3000</option>
+				<option value="5000">5000</option>
+				<option value="10000">10000</option>
+				<option value="20000">20000</option>
+				</select> <a href="#" onclick="SlideFramework.slides.slide.viewTime = (document.getElementById('viewTime')[document.getElementById('viewTime').selectedIndex].value/1)">set</a></dd>
+		</dl>
+
+	
+
+</body>
+
+</html>
